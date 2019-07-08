@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "sourceMap": false,
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "types": [
+            "jest"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "~/*": [
+                "./types/*"
+            ]
+        },
+        "target": "es6",
+        "outDir": "dist",
+        "declaration": true,
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

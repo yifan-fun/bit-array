@@ -1,0 +1,40 @@
+{
+  "name": "bit-array",
+  "version": "1.0.0",
+  "description": "Analog bit array for JS",
+  "main": "dist/BitArray.js",
+  "types": "./dist/BitArray.d.ts",
+  "scripts": {
+    "test": "jest --verbose",
+    "build": "tsc -p tsconfig.json"
+  },
+  "jest": {
+    "rootDir": "tests",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "json",
+      "js"
+    ]
+  },
+  "keywords": [
+    "js-bit",
+    "bit-array",
+    "arraybuffer-bit"
+  ],
+  "author": "geekx",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.4",
+    "@types/jest": "^24.0.15",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.2"
+  }
+}
