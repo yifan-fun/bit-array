@@ -33,4 +33,10 @@ describe('bit-array:function', () => {
         expect(bitArray.get(0)).toBe(1)
         expect(bitArray.get(4)).toBe(0)
     })
+
+    test('set value of bit array out of range', () => {
+        expect(() => {
+            bitArray.set(1, 2)
+        }).toThrow()
+    })
 })

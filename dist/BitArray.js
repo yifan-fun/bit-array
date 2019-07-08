@@ -24,13 +24,13 @@ class BitArray {
     }
     validateIndex(index) {
         if (!Number.isInteger(index)) {
-            throw new Error("bit array index must be integer");
+            throw new TypeError("bit array index must be integer");
         }
         else if (index < 0) {
-            throw new Error("bit array index must >= 0");
+            throw new RangeError("bit array index must >= 0");
         }
         else if (index >= this.length) {
-            throw new Error("bit array index out of length range");
+            throw new RangeError("bit array index out of length range");
         }
     }
     get(index) {
@@ -45,13 +45,16 @@ class BitArray {
         this.validateIndex(index);
         let offset = Math.floor(index / BYTE_LENGTH);
         let byteIndex = index % BYTE_LENGTH;
+        debug(`set bit array index: ${index}, value: ${value}`);
         if (value === 1 /* ON */) {
             this.byteArray[offset] |= (1 /* ON */ << byteIndex);
         }
-        else {
+        else if (value === 0 /* OFF */) {
             this.byteArray[offset] &= (~(1 /* ON */ << byteIndex));
         }
-        debug(`set bit array index: ${index}, value: ${value}`);
+        else {
+            throw new RangeError('bit array set value must be number 0 or 1');
+        }
     }
 }
 exports.BitArray = BitArray;
